@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSE Books | Student Study Portal</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="books.css" />
+</head>
+<body>
+  <section class="container my-5">
+    <div class="text-center mb-4">
+      <h2>📚 Computer Science Books</h2>
+      <p class="lead">Explore popular CSE books to boost your knowledge</p>
+    </div>
+
+    <div id="book-container"></div>
+
+    <div class="text-center">
+      <a href="main.html" class="back-link">← Back to Dashboard</a>
+    </div>
+  </section>
+
+  <script>
+    const books = [
+      {
+        title: "Introduction to Algorithms",
+        subtitle: "by Cormen, Leiserson, Rivest, Stein",
+        description: "A widely used textbook for algorithms, covering data structures, sorting, and graph theory.",
+        category: "Algorithms",
+        pages: 1312,
+        rating: 4.9,
+        image:"./images/algo-book.jpg",
+        link: "https://archive.org/details/IntroductionToAlgorithms_201810"
+      },
+      {
+        title: "Operating System Concepts",
+        subtitle: "by Silberschatz, Galvin, Gagne",
+        description: "Classic OS book covering process management, memory, file systems, and security.",
+        category: "Operating Systems",
+        pages: 944,
+        rating: 4.7,
+        image: "./images/os.jpg",
+        link: "https://archive.org/details/operating-system-concepts-9th-edition"
+      },
+      {
+        title: "Computer Networking: A Top-Down Approach",
+        subtitle: "by Kurose & Ross",
+        description: "Modern approach to computer networking, focusing on application-layer protocols first.",
+        category: "Networking",
+        pages: 864,
+        rating: 4.8,
+        image: "./images/net.jpg",
+        link: "https://archive.org/details/ComputerNetworkingATopDownApproach"
+      },
+      {
+        title: "Database System Concepts",
+        subtitle: "by Silberschatz, Korth, Sudarshan",
+        description: "Detailed textbook on relational databases, SQL, indexing, and transactions.",
+        category: "Databases",
+        pages: 1376,
+        rating: 4.6,
+        image: "./images/data.jpg",
+        link: "https://archive.org/details/DatabaseSystemConcepts6thEdition"
+      },
+      {
+        title: "Artificial Intelligence: A Modern Approach",
+        subtitle: "by Russell & Norvig",
+        description: "Comprehensive guide on AI, search algorithms, logic, planning, and machine learning.",
+        category: "Artificial Intelligence",
+        pages: 1152,
+        rating: 4.9,
+        image: "./images/AI.jpg",
+        link: "https://archive.org/details/ArtificialIntelligenceAModernApproach"
+      }
+    ];
+
+    const container = document.getElementById('book-container');
+
+    books.forEach(book => {
+      const card = `
+        <div class="card mb-4 book-card shadow">
+          <div class="card-header">
+            <div class="row no-gutters">
+              <div class="col-md-3 text-center p-2">
+                <img src="${book.image}" class="img-fluid rounded" alt="Book Cover" style="max-height: 200px;">
+              </div>
+              <div class="col-md-9 p-3">
+                <h3 class="mb-1">${book.title}</h3>
+                <h5 class="text-muted mb-2"><u>${book.subtitle}</u></h5>
+                <p class="text-secondary mb-2">${book.description}</p>
+                <div class="mt-2">
+                  <span class="badge badge-primary">📚 Category: ${book.category}</span>
+                  <span class="badge badge-success ml-2">📄 Pages: ${book.pages}</span>
+                  <span class="badge badge-warning ml-2">⭐ Rating: ${book.rating}</span>
+                </div>
+                <a href="${book.link}" class="btn btn-outline-info mt-3" target="_blank">Read / Download</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+      container.innerHTML += card;
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

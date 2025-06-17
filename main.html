@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Study Portal</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+  <!-- Custom Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Student Study Portal</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="profile.html">Profile</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Options
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Books</a>
+              <a class="dropdown-item" href="#">Wikipedia</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Dictionary</a>
+              <a class="dropdown-item" href="#">YouTube</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">To-do</a>
+              <a class="dropdown-item" href="#">Homework</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Notes</a>
+              <a class="dropdown-item" href="#">Conversion</a>
+
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="register.html">Register</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+ 
+
+  <!-- Welcome -->
+  <div class="container text-center my-4">
+    <h2>Welcome to Student Study Portal</h2>
+    <p class="lead">Your all-in-one academic assistant</p>
+  </div>
+
+  <!-- Dashboard Cards -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 mb-4">
+        <div class="card dashboard-card">
+          <img src="images/notes.jpg" class="card-img-top" alt="Notes">
+          <div class="card-body">
+           <a href="notes.html" class="btn btn-outline-primary">Notes</a>
+             
+            <p>Create and access your study notes anytime.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card dashboard-card">
+          <img src="images/homework.jpg" class="card-img-top" alt="Homework">
+          <div class="card-body">
+            <a href="homework.html" class="btn btn-outline-primary">Homework</a>
+            <p>Track and prioritize your homework tasks.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card dashboard-card">
+          <img src="images/youtube.jpg" class="card-img-top" alt="Youtube">
+          <div class="card-body">
+            <a href="youtube.html" class="btn btn-outline-primary">Youtube</a>
+            <p>Watch educational videos right here.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card dashboard-card">
+          <img src="images/todo.jpg" class="card-img-top" alt="To-do">
+          <div class="card-body">
+            <a href="todo.html" class="btn btn-outline-primary">To-do</a>
+            <p>Keep track of daily tasks with ease.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second row -->
+    <div class="row">
+      <div class="col-md-3 mb-4">
+        <div class="card dashboard-card">
+          <img src="images/books.jpg" class="card-img-top" alt="Books">
+          <div class="card-body">
+            <a href="books.html" class="btn btn-outline-primary">books</a>
+            <p>Browse and read recommended books.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card dashboard-card">
+          <img src="images/dictionary.jpg" class="card-img-top" alt="Dictionary">
+          <div class="card-body">
+            <a href="dictionary.html" class="btn btn-outline-primary">Dictionary</a>
+            
+            <p>Instantly look up word meanings.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card dashboard-card">
+          <img src="images/wiki.jpg" class="card-img-top" alt="Wikipedia">
+          <div class="card-body">
+           <a href="wiki.html" class="btn btn-outline-primary">Wikipedia</a>
+            <p>Search topics on Wikipedia quickly.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card dashboard-card">
+          <img src="images/conversion.jpg" class="card-img-top" alt="Conversion">
+          <div class="card-body">
+            <a href="conversion.html" class="btn btn-outline-primary">Conversion</a>
+
+            <p>Convert units and measurements easily.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

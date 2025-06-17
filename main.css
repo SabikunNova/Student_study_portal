@@ -1,0 +1,62 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: #f8f9fa;
+  }
+
+ 
+.custom-navbar {
+  background: linear-gradient(to right, #2575fc); 
+}
+
+.custom-navbar .nav-link,
+.custom-navbar .navbar-brand,
+.custom-navbar .dropdown-item {
+  color: white !important;
+}
+
+.custom-navbar .dropdown-menu {
+  background-color: #4b4b4b; 
+}
+
+.custom-navbar .dropdown-item:hover {
+  background-color: #5a5a5a;
+  color: #fff;
+}
+
+
+.dashboard-card {
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+}
+
+  
+  
+  .dashboard-card {
+    border: none;
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .dashboard-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dashboard-card img {
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  .card-title {
+    font-weight: 600;
+    color: #007bff;
+  }
+  
+  .btn {
+    font-weight: 600;
+  }
+  

@@ -1,0 +1,26 @@
+body {
+    background: linear-gradient(135deg, #d1f0e4, #e9f5db);
+    font-family: 'Quicksand', sans-serif;
+  }
+  
+  .register-card {
+    width: 100%;
+    max-width: 450px;
+    background-color: white;
+    border-radius: 10px;
+  }
+  
+  h3 {
+    font-weight: 700;
+    color: #28a745;
+  }
+  
+  .btn-success {
+    background-color: #28a745;
+    border: none;
+  }
+  
+  .btn-success:hover {
+    background-color: #1e7e34;
+  }
+  
