@@ -1,49 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>YouTube | Student Study Portal</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YouTube | Student Study Portal</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      background-color: #f9f9f9;
+    }
+    .card {
+      transition: 0.3s;
+      border-radius: 15px;
+    }
+    .card:hover {
+      transform: scale(1.01);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+    .video-thumbnail {
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .btn-danger {
+      padding: 10px 25px;
+      font-weight: bold;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+  </style>
 </head>
 <body>
-    <section class='text-center container'>
-    <h2>Search Videos in Youtube</h2>
-    <p>search videos and select any video to open in youtube</p>
-    <form action="" method="post">
-        <input class="btn btn-danger" type="submit" value="Submit">
-    </form><br>
 
-    <a href="#" target="_blank">
-        <div class="card">
-            <div class="card-header">
-                <div class="row">
-                    <div class="col-md-5">
-                        <img class="img-fluid" src="#" alt="">
+  <section class="container my-5">
+    <div class="text-center mb-4">
+      <h2>🔍 Search YouTube Videos</h2>
+      <p class="lead">Search for educational videos and open them directly in YouTube</p>
+    </div>
 
+    <form id="searchForm" class="text-center mb-4">
+      <input type="text" id="searchInput" placeholder="Enter keyword..." class="form-control w-50 d-inline-block" required/>
+      <input class="btn btn-danger ml-2" type="submit" value="Search">
+    </form>
+
+    <div id="results"></div>
+
+    <div class="text-center">
+      <a href="main.html" class="back-link">← Back to Dashboard</a>
+    </div>
+  </section>
+
+  <script>
+    const dummyVideos = [
+      {
+        title: "MP",
+        channel: "Neso Academy",
+        description: "Learn Microprocessor",
+        duration: "1:00:00",
+        views: "2.1M",
+        published: "2023-08-10",
+        thumbnail: "./images/neso.jpg",
+        link: "https://youtu.be/jte2S2iWRMI?si=HcNWF-AaopGrCTSz"
+      },
+      {
+        title: "OS Course",
+        channel: "Gate Smashers",
+        description: "Learn operating system",
+        duration: "45:30",
+        views: "1.5M",
+        published: "2022-11-02",
+        thumbnail: "./images/gate.jpg",
+        link: "https://youtu.be/bkSWJJZNgf8?si=M_qJtCvhpDBGqVcg"
+      },
+      {
+        title: "Networking",
+        channel: "Gate Smashers",
+        description: "Learn neteorking",
+        duration: "1:30:00",
+        views: "3.9M",
+        published: "2021-05-20",
+        thumbnail: "./images/gate.jpg",
+        link: "https://youtu.be/JFF2vJaN0Cw?si=reLLJvzPE2Eelccr"
+      }
+    ];
+
+     document.getElementById("searchForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const keyword = document.getElementById("searchInput").value.toLowerCase();
+      const resultsContainer = document.getElementById("results");
+      resultsContainer.innerHTML = "";
+
+      const filtered = dummyVideos.filter(video =>
+        video.title.toLowerCase().includes(keyword) ||
+        video.channel.toLowerCase().includes(keyword)
+      );
+
+      if (filtered.length === 0) {
+        resultsContainer.innerHTML = `<div class="alert alert-warning text-center">No results found!</div>`;
+        return;
+      }
+
+      filtered.forEach(video => {
+        const card = `
+          <a href="${video.link}" target="_blank" style="text-decoration: none; color: inherit;">
+            <div class="card mb-4 shadow">
+              <div class="card-body">
+                <div class="row no-gutters">
+                  <div class="col-md-5">
+                    <img src="${video.thumbnail}" alt="Video Thumbnail" class="img-fluid video-thumbnail">
+                  </div>
+                  <div class="col-md-7 pl-3">
+                    <h4 class="mb-1">${video.title}</h4>
+                    <h6 class="text-muted mb-2">🎥 <u>${video.channel}</u></h6>
+                    <p class="text-secondary">${video.description}</p>
+                    <div class="mt-2">
+                      <span class="badge badge-info">⏱ Duration: ${video.duration}</span>
+                      <span class="badge badge-success ml-2">👁 Views: ${video.views}</span>
+                      <span class="badge badge-secondary ml-2">📅 Published: ${video.published}</span>
                     </div>
-                    <div class="col-md-7">
-                        <h3 class="p-0 m-0">title</h3>
-                        <b>
-                            <u>
-                                <h5 class="p-0 m-0">channel</h5>
-                            </u>
-                        </b>
-                        <h6 class="p-0 m-1">description</h6>
-                        <b>
-                            <h6 class="ml-0 mt-3">duration</h6>
-                            <h6 class="ml-0 mt-1">views</h6>
-                            <h6 class="ml-0 mt-1">published</h6>
-                        </b>
-                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
-             <a href="main.html">← Back to Dashboard</a>
-        </div>
-    </a>
-    <br>
-</section>
+          </a>
+        `;
+        resultsContainer.innerHTML += card;
+      });
+    }); 
+  </script>
 
 </body>
 </html>
-
